@@ -199,6 +199,7 @@ class WiredIn(unittest.TestCase):
         job_ns.update({"jobs": [], "cc": "clang", "host_srcs": srcs, "obj_dir": "/obj", "host_fl": ["-O2"],
                        "OPUS": "/opus", "FFMPEG": "", "LINUX": False, "FFMPEG_LX": None,
                        "stamp_def": '-DHOOKSHOT_VERSION="test"', "flags_def": flags_def, "ZSTD": "/zstd",
+                       "ZSTD_HOST": ("prompts.c", "hos_zstd.c"),
                        "dav1d_fl": ["-DHOOKSHOT_DAV1D"], "host_deps": b"deps", "zstd_api": b"zstd"})
         exec(segment(text, node), job_ns)
         # (object_key opens the source for the hash and does not close it: the same as test_shader_stamp_cache.py)
